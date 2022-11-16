@@ -29,16 +29,21 @@
 > sudo swapoff -a
 
 > sudo sed -i '/ swap / s/^\(.*\)$/#\1/g' /etc/fstab
-###########################################
-When installing caution(kubelet isn't running issue): 
-sudo nano /etc/docker/daemon.json
+
+### When installing caution(kubelet isn't running issue): 
+
+> sudo nano /etc/docker/daemon.json
+
 put lines below:
 {
     "exec-opts": ["native.cgroupdriver=systemd"]
 }
- sudo systemctl daemon-reload
- sudo systemctl restart docker
- sudo systemctl restart kubelet
+
+> sudo systemctl daemon-reload
+
+> sudo systemctl restart docker
+
+> sudo systemctl restart kubelet
 
 ###############################################
 
