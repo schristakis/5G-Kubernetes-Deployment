@@ -63,3 +63,10 @@ put lines below:
 
 > kubectl apply -f https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel.yml
 
+# Helm Installation
+
+> curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/master/scripts/get
+
+> chmod +x get_helm.sh
+
+> ./get_helm.sh --version v3.5.3
