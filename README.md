@@ -70,3 +70,9 @@ put lines below:
 > chmod +x get_helm.sh
 
 > ./get_helm.sh --version v3.5.3
+
+# Multus CNI Installation
+
+> git clone https://github.com/k8snetworkplumbingwg/multus-cni.git && cd multus-cni
+
+> cat ./deployments/multus-daemonset-thick.yml | kubectl apply -f -
