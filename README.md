@@ -76,3 +76,9 @@ put lines below:
 > git clone https://github.com/k8snetworkplumbingwg/multus-cni.git && cd multus-cni
 
 > cat ./deployments/multus-daemonset-thick.yml | kubectl apply -f -
+
+> kubectl create ns oai
+
+> kubectl create secret docker-registry personalkey --docker-server=https://index.docker.io/v1/ --docker-username=schristakis --docker-password=sosotatis1999 --docker-email=schristakis@uth.gr -n oai
+
+> kubectl create secret docker-registry personalkey --docker-server=https://index.docker.io/v1/ --docker-username=schristakis --docker-password=sosotatis1999 --docker-email=schristakis@uth.gr 
