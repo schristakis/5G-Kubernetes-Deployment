@@ -49,17 +49,17 @@ put lines below:
 
 # Cluster Initialization
 
-> kubeadm reset -f
+> sudo kubeadm reset -f
 
-> rm -rf  /etc/cni/net.d
+> sudo rm -rf  /etc/cni/net.d
 
-> kubeadm init --pod-network-cidr=10.244.0.0/16
+> sudo kubeadm init --pod-network-cidr=10.244.0.0/16
 
-> mkdir -p $HOME/.kube
+> sudo mkdir -p $HOME/.kube
 
-> cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+> sudo \cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
 
-> chown $(id -u):$(id -g) $HOME/.kube/config
+> sudo chown $(id -u):$(id -g) $HOME/.kube/config
 
 > kubectl apply -f https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel.yml
 
