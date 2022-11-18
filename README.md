@@ -5,7 +5,9 @@
 
 > sudo apt-get upgrade
 
-> sudo apt-get install docker.io
+> apt-cache madison docker-ce | awk '{ print $3 }'
+
+> sudo apt-get install docker-ce=5:19.03.6~3-0~ubuntu-bionic docker-ce-cli=5:19.03.6~3-0~ubuntu-bionic
 
 > sudo systemctl enable docker
 
@@ -13,9 +15,6 @@
 
 > sudo systemctl start docker
 
-> apt-cache madison docker-ce | awk '{ print $3 }'
-
-> sudo apt-get install docker-ce=5:19.03.6~3-0~ubuntu-bionic docker-ce-cli=5:19.03.6~3-0~ubuntu-bionic
 
 # Kubernetes Installation
 > curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add
