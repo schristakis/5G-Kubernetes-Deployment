@@ -60,6 +60,8 @@ put lines below:
 
 > sudo chown $(id -u):$(id -g) $HOME/.kube/config
 
+> kubectl taint nodes  socratis-oai-cn node-role.kubernetes.io/master-
+
 > kubectl apply -f https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel.yml
 
 # Helm Installation
@@ -75,8 +77,6 @@ put lines below:
 > git clone https://github.com/k8snetworkplumbingwg/multus-cni.git && cd multus-cni
 
 > cat ./deployments/multus-daemonset-thick.yml | kubectl apply -f -
-
-> kubectl taint nodes  socratis-oai-cn node-role.kubernetes.io/master-
 
 > kubectl create ns oai
 
