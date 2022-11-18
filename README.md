@@ -15,7 +15,7 @@
 
 > apt-cache madison docker-ce | awk '{ print $3 }'
 
-> sudo apt-get install docker-ce=5:19.03.10~3-0~ubuntu-focal docker-ce-cli=5:19.03.10~3-0~ubuntu-focal
+> sudo apt-get install docker-ce=5:19.03.6~3-0~ubuntu-bionic docker-ce-cli=5:19.03.6~3-0~ubuntu-bionic
 
 # Kubernetes Installation
 > curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add
