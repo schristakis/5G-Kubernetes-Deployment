@@ -9,6 +9,21 @@
 
 > sudo apt-get install docker-ce=5:19.03.6~3-0~ubuntu-bionic docker-ce-cli=5:19.03.6~3-0~ubuntu-bionic
 
+### When installing caution(kubelet isn't running issue): 
+
+> sudo nano /etc/docker/daemon.json
+
+put lines below:
+{
+    "exec-opts": ["native.cgroupdriver=systemd"]
+}
+
+> sudo systemctl daemon-reload
+
+> sudo systemctl restart docker
+
+> sudo systemctl restart kubelet
+
 > sudo systemctl enable docker
 
 > sudo systemctl status docker
@@ -29,20 +44,6 @@
 
 > sudo sed -i '/ swap / s/^\(.*\)$/#\1/g' /etc/fstab
 
-### When installing caution(kubelet isn't running issue): 
-
-> sudo nano /etc/docker/daemon.json
-
-put lines below:
-{
-    "exec-opts": ["native.cgroupdriver=systemd"]
-}
-
-> sudo systemctl daemon-reload
-
-> sudo systemctl restart docker
-
-> sudo systemctl restart kubelet
 
 ###############################################
 
