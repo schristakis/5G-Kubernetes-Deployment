@@ -55,7 +55,7 @@ put lines below:
 
 > sudo kubeadm init --pod-network-cidr=10.244.0.0/16
 
-> kubectl taint nodes  socratis-oai-cn node-role.kubernetes.io/master-
+> sudo kubectl taint nodes  socratis-oai-cn node-role.kubernetes.io/master-
 
 > sudo mkdir -p $HOME/.kube
 
