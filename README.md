@@ -36,7 +36,7 @@ put lines below:
 
 > sudo apt-add-repository "deb http://apt.kubernetes.io/ kubernetes-xenial main"
 
-> sudo apt install kubeadm=1.17.0-00 kubectl=1.17.0-00 kubelet=1.17.0-00
+> sudo apt install kubeadm=1.20.0-00 kubectl=1.20.0-00 kubelet=1.20.0-00
 
 > sudo apt-mark hold kubeadm kubelet kubectl
 
