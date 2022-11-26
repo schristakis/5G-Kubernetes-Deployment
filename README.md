@@ -14,15 +14,16 @@
 > sudo nano /etc/docker/daemon.json
 
 put lines below:
+
+
 {
     "exec-opts": ["native.cgroupdriver=systemd"]
 }
 
+
 > sudo systemctl daemon-reload
 
 > sudo systemctl restart docker
-
-> sudo systemctl restart kubelet
 
 > sudo systemctl enable docker
 
@@ -63,9 +64,13 @@ put lines below:
 
 > sudo chown $(id -u):$(id -g) $HOME/.kube/config
 
-
-
 > kubectl apply -f https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel.yml
+
+> kubectl create ns oai
+
+> kubectl create secret docker-registry personalkey --docker-server=https://index.docker.io/v1/ --docker-username=schristakis --docker-password=sosotatis1999 --docker-email=schristakis@uth.gr -n oai
+
+> kubectl create secret docker-registry personalkey --docker-server=https://index.docker.io/v1/ --docker-username=schristakis --docker-password=sosotatis1999 --docker-email=schristakis@uth.gr 
 
 # Helm Installation
 
@@ -81,8 +86,3 @@ put lines below:
 
 > cat ./deployments/multus-daemonset-thick.yml | kubectl apply -f -
 
-> kubectl create ns oai
-
-> kubectl create secret docker-registry personalkey --docker-server=https://index.docker.io/v1/ --docker-username=schristakis --docker-password=sosotatis1999 --docker-email=schristakis@uth.gr -n oai
-
-> kubectl create secret docker-registry personalkey --docker-server=https://index.docker.io/v1/ --docker-username=schristakis --docker-password=sosotatis1999 --docker-email=schristakis@uth.gr 
