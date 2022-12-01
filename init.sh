@@ -36,6 +36,6 @@ helm install gnb oai-gnb/
 sleep 15
 helm install nrue oai-nr-ue/
 sleep 10
-sudo kubectl exec -ti $(kubectl get pods | grep nr-ue  | awk {'print $1'}) -c nr-ue bash
+sudo kubectl exec -ti $(kubectl get pods | grep nr-ue  | awk {'print $1'}) -c nr-ue -- bash -c " ping google.fr -I oaitun_ue1 -c 5"
 
 
